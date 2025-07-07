@@ -1,11 +1,9 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from Website.core.models import Words, Guess
+from Solver.core.models import Words
 
-class GuessForm(forms.ModelForm):
-    def __init__(self, *args, **kargs):
-        super().__init__(*args, **kargs)
-        self.fields['guess'].required = False
+class GuessForm(forms.Form):
+    guess = forms.CharField(max_length=5, required=False)
 
     def clean_guess(self):
         guess = self.cleaned_data.get('guess')
@@ -15,11 +13,4 @@ class GuessForm(forms.ModelForm):
             raise ValidationError("Not in word list")
     
     def split_guess(guess):
-        result = []
-        for i in range(len(guess)):
-            result.append(guess[i].upper())
-        return result
-    
-    class Meta:
-        model = Guess
-        fields = ['guess']
+        return [char.upper() for char in guess]

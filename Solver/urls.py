@@ -1,5 +1,5 @@
 """
-URL configuration for Website project.
+URL configuration for Solver project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import re_path, include
 
 urlpatterns = [
-    re_path(r'^', include('Website.core.urls')),
+    re_path(r'^', include('Solver.core.urls')),
 
     re_path(r'^admin/', admin.site.urls),
 ]

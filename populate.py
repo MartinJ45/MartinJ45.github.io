@@ -1,10 +1,10 @@
 import os
 import django
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Website.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Solver.settings")
 django.setup()
 
-from Website.core.models import Words
+from Solver.core.models import Words
 
 with open(r"data/valid-wordle-words.txt", "r", encoding="utf-8") as f:
     data = f.readlines()

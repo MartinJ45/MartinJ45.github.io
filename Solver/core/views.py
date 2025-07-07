@@ -4,8 +4,8 @@ from django.views.generic.edit import FormView
 from django.http import JsonResponse, HttpResponse
 import json
 
-from Website.core.models import Words, Guess
-from Website.core.forms import GuessForm
+from Solver.core.models import Words
+from Solver.core.forms import GuessForm
 
 class HomeView(View):
     template_name = 'index.html'
