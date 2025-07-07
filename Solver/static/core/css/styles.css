@@ -1,0 +1,12 @@
+.box {
+    width: 60px;
+    height: 60px;
+}
+
+.yellow {
+    background-color: #b59f3b !important;
+}
+
+.green {
+    background-color: #538d4e !important;
+}
